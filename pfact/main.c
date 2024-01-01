@@ -6,9 +6,17 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    char    greeting[40];
+    
+    if (argc > 1) {
+        strncpy(greeting, argv[1], 40);
+    } else {
+        strcpy(greeting, "please provide your name next time");
+    }
+    printf("Hello, %s.\n", greeting);
     return 0;
 }
